@@ -11,7 +11,6 @@
 // is L2, which is what we want here).
 
 //------------------------------------------------------------------------------ 
-//------------------------------------------------------------------------------ 
 
 // Parameters: 
 // a, b : Attribute arrays to be compared.
@@ -20,10 +19,11 @@
 
 // Returns : cosine similarity estimate for the pair (a, b)
 
-// For adjusted cosine similarity, pass values to adjusted.js prior to 
-// calculating cosine similarity.
+// For Adjusted Cosine Similarity, used adjusted() and then pass to cossim().
 
 //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------ 
+
 
 // Run from START to END:
 
@@ -31,8 +31,4 @@
 function cossim(a, b) {
   return math.dot(a, b) / (math.norm(a) * math.norm(b));
 }
-// END
-
-//------------------------------------------------------------------------------
-//------------------------------------------------------------------------------
-  
+// END  

@@ -21,8 +21,8 @@ let FIPS_mat = math.matrix([FIPS_01001, FIPS_01003, FIPS_01005]); // create a De
 
 // To compare vector of values for a county (i) to all other counties (j) in a state.
 
-let cossim_mat = math.ones(1, 3);
-let cosine_mat_dims = math.size(cossim_mat);
+let cossim_mat = math.ones(1, 3); // blank 1 x 3 matrix (pre-populated with 1s)
+let cosine_mat_dims = math.size(cossim_mat); // dimensions of matrix
 let ncol = cosine_mat_dims.get([1]);
 
 for (i = 0; i < 1; i++) {

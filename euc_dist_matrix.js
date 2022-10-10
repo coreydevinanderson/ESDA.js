@@ -6,22 +6,17 @@
 
 // Description:
 
-// JavaScript function for calculating pairwise Euclidean distance of L2 norms 
-// for attribute rows in a matix.
-
-// Utilizes matrix algebra function math.distance from math.js.
-// A nested for loop is used to index for all pairs [i, j]
-// including comparisons to self.
-
-// Returns: an nrow x nrow (square) distance matrix.
+// JavaScript function for calculating pairwise Euclidean distance of row 
+// vectors in input "Array" or  "DenseMatrix" using math.distance
 
 //------------------------------------------------------------------------------//
 
 // Parameters:
 // your_matrix  : an r x c "Array" or "DenseMatrix" object.
 
-// Example calculation:  5 SVI 2018 indicators for 3 counties. 
+// Returns: an nrow x nrow (square) distance matrix.
 
+//------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------//
 
 // Run from START to END:

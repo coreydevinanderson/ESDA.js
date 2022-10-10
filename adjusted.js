@@ -6,16 +6,19 @@
 
 // Description:
 
-// This function was originally written as a helper function for calculating
-// adjusted cosine similarity (cossim.js).
+// This function was written as a helper function for calculating adjusted 
+// cosine similarity (cossim.js).
 
-// Values are centered by row means and/or row standard deviations. Both
-// transformations yield the same adjusted cosine similarity value.
+// Cosine similarity compares row attributes, so values are centered by row 
+// means and/or row standard deviations. 
+
+// Note that both available methods ("zscore" and "centered") yield the same
+// cossine similarity.
 
 // -----------------------------------------------------------------------------
 
 // Parameters:
-// your_matrix : a DenseMatrix or Array to be rescaled.
+// your_matrix : a math.js "DenseMatrix" or JavaScript "Array" to be rescaled.
 
 // method : rescaling to be applied to each array. Current options are "zscore" 
 //          or "centered". Default is "zscore"
@@ -57,7 +60,3 @@ function adjusted(your_matrix, method = "zscore") {
 return standardized;
 }
 // END
-
-//------------------------------------------------------------------------------
-//------------------------------------------------------------------------------
-
