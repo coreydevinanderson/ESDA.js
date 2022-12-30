@@ -1,4 +1,4 @@
-// Function:: cossim()
+// Function:: cosSim()
 
 // Authors: Corey Devin Anderson and Kirankumar Batchu
 
@@ -28,7 +28,7 @@
 // Run from START to END:
 
 // START
-function cossim(a, b) {
+function cosSim(a, b) {
   return math.dot(a, b) / (math.norm(a) * math.norm(b));
 }
 // END  
