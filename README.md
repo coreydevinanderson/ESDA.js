@@ -17,7 +17,7 @@ At the present time, this module contains the following functionality:
 - adjusted2.js* <br>
 
 Dependencies: math.js
-
+<br>
 
 #### Create bivariate classes (based on tertiles) to support a 3 x 3 color scheme for a bivariate choropleth map:
 
@@ -25,28 +25,28 @@ Dependencies: math.js
 - bchTerts2.js* <br>
 
 Dependencies: simple-statistics
-
+<br>
 
 #### Calculate cosine similarity between arrays:
 
 - cosSim.js <br>
 
 Dependencies: math.js
-
+<br>
 
 #### Calculate Euclidean distance between arrays:
 
 - distEuclidean.js <br>
 
 Dependencies: none
-
+<br>
 
 #### Create a pairwise Euclidean distance matrix from a 'DenseMatrix' or 2D 'Array':
 
 - EucDistMatrix.js <br>
 
 Dependencies: math.js
-
+<br>
 
 
 #### Apply a rank transformation to an array:
@@ -54,19 +54,16 @@ Dependencies: math.js
 - percentileRank.js <br>
 - percentileRank2.js <br>
 
-
 Dependencies: none
-
+<br>
 
 ---
 
 Other files:
 
-testData.js contains test code and example calls for each function.
-test.js contains a JSON object with county level SVI 2018 data (as percent ranks) for five indicators plus diabetes percentage.
-
-data/diabetes_indicators.csv is a comma delimited file containing the same data as test.js
-
+- testData.js contains test code and example calls for each function.<br>
+- test.js contains a JSON object with county level SVI 2018 data (as percent ranks) for five indicators plus diabetes percentage.<br>
+-data/diabetes_indicators.csv is a comma delimited file containing the same data as test.js<br>
 
 ---
 
