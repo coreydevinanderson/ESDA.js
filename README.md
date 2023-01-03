@@ -13,59 +13,60 @@ At the present time, this module contains the following functionality:
 
 * Mean-center or standardize a 'DenseMatrix' or 2D 'Array':
 
-adjusted.js
-adjusted2.js*
+- adjusted.js <br>
+- adjusted2.js* <br>
 
 Dependencies: math.js
 
 
 * Create bivariate classes (based on tertiles) to support a 3 x 3 color scheme for a bivariate choropleth map:
 
-bchTerts.js
-bchTerts2.js*
+- bchTerts.js <br>
+- bchTerts2.js* <br>
 
 Dependencies: simple-statistics
 
 
 * Calculate cosine similarity between arrays:
 
-cosSim.js
+- cosSim.js <br>
 
 Dependencies: math.js
 
 
 * Calculate Euclidean distance between arrays:
 
-distEuclidean.js
+- distEuclidean.js <br>
 
 Dependencies: none
 
 
 * Create a pairwise Euclidean distance matrix from a 'DenseMatrix' or 2D 'Array':
 
-EucDistMatrix.js
+- EucDistMatrix.js <br>
 
 Dependencies: math.js
 
 
 * Apply a rank transformation to an array:
 
-percentileRank.js
-percentileRank2.js
+- percentileRank.js <br>
+- percentileRank2.js <br>
 
 
 Dependencies: none
 
 
---
+---
 
-testData.js contains test code for each function.
+Other files:
+
+testData.js contains test code and example calls for each function.
 test.js contains a JSON object with county level SVI 2018 data (as percent ranks) for five indicators plus diabetes percentage.
 
 data/diabetes_indicators.csv is a comma delimited file containing the same data as test.js
 
 
----
 ---
 
 Maintainer/Developer: Corey Devin Anderson
