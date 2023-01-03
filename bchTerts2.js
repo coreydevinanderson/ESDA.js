@@ -39,34 +39,7 @@
 
 //------------------------------------------------------------------------------
 
-// Example data:
-
-// Load data (from JSON on GitHub) for prototyping:
-
-// Uncomment url to begin...
-
-let url = "https://raw.githubusercontent.com/coreydevinanderson/cossimjs/main/data/diabetes_indicators.JSON";
-
-let xhReq = new XMLHttpRequest();
-xhReq.open("GET", url, false);
-xhReq.send(null);
-let jsonObject = JSON.parse(xhReq.responseText);
-
-// console.log(Object.keys(jsonObject))
-// ["County_FIPS","County","State","EPL_AGE65","EPL_POV","EPL_MINRTY","EPL_NOHSDP","EPL_UNEMP","Diabetes_pct"]
-
-// Save indicators as separate variables for protoyping:
-
-let EPL_AGE65 = jsonObject.EPL_AGE65;
-let EPL_POV = jsonObject.EPL_POV;
-let EPL_MINRTY = jsonObject.EPL_MINRTY;
-let EPL_NOHSDP = jsonObject.EPL_NOHSDP;
-let EPL_UNEMP = jsonObject.EPL_UNEMP;
-let Diabetes_pct = jsonObject.Diabetes_pct;
-
-//------------------------------------------------------------------------------
-
-// Function: getTerts2()
+// getTerts2()
 
 // START
 function getTerts2(yourArray) {
@@ -79,10 +52,6 @@ function getTerts2(yourArray) {
 return(out)  
 }
 // END
-
-
-// Test?
-// console.log(getTerts2(EPL_AGE65))
 
 //------------------------------------------------------------------------------
 
@@ -107,14 +76,6 @@ function lmh2(value, yourTerts) {
   } 
 }
 
-// Example call with .map()
-
-// let test = EPL_AGE65.map(function(x) { return lmh2(x, getTerts2(EPL_AGE65)) })
-// 
-// anonymous function:
-// let test = EPL_AGE65.map((x) => lmh2(x, getTerts2(EPL_AGE65)));
-// console.log(test)
-
 //------------------------------------------------------------------------------
 
 // bchTerts2()
@@ -127,35 +88,3 @@ return c;
 };
 
 //------------------------------------------------------------------------------
-//------------------------------------------------------------------------------
-
-// Test? With SVI data
-// console.log(bchTerts2(EPL_AGE65, EPL_POV));
-
-// with nulls:
-
-
-// How to handle null values? 
-
-// Make some smaller arrays for testing purposes:
-
-// one null
-let EPL_AGE65_test = EPL_AGE65.slice(0, 10)
-// Randomly generate random index between 0 and 10 and replace with null
-
-function make_null(vector) {
-  vector[Math.floor(Math.random() * 11)] = null
-return vector
-}
-
-let EPL_AGE65_test0 = make_null(EPL_AGE65_test)
-console.log(EPL_AGE65_test0)
-
-// one or more nulls?
-
-// no nulls
-let EPL_MINRTY_test = EPL_MINRTY.slice(0, 10);
-console.log(EPL_MINRTY_test)
-
-
-console.log(bchTerts2(EPL_AGE65_test0, EPL_MINRTY_test));

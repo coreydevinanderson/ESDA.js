@@ -6,7 +6,7 @@
 
 // Description: 
 
-// Calculates the Euclidean distance between 1D Arrays of numbers
+// Calculates the Euclidean distance between 1D Arrays of numbers\
 
 //----------------------------------------------------------------------------
 

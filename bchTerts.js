@@ -85,11 +85,6 @@ return(out)
 // return(label_array)
 // }
 
-// Test?
-// console.log(LMH(EPL_AGE65, EPL_AGE65_terts))
-
-//
-
 // V2: use this!
 
 function lmh(value, yourTerts) {
@@ -102,14 +97,6 @@ function lmh(value, yourTerts) {
   } 
 }
 
-// Example call with .map()
-
-// let test = EPL_AGE65.map(function(x) { return lmh(x, getTerts(EPL_AGE65)) })
-// 
-// anonymous function:
-// let test = EPL_AGE65.map((x) => lmh(x, getTerts(EPL_AGE65)));
-
-// console.log(test)
 
 //------------------------------------------------------------------------------
 
