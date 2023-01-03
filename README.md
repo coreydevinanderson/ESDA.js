@@ -11,7 +11,7 @@ At the present time, this module contains the following functionality:
 (an asterisk * indicates versions of functions that have been rewritten to account for null values)
 
 
-* Mean-center or standardize a 'DenseMatrix' or 2D 'Array':
+#### Mean-center or standardize a 'DenseMatrix' or 2D 'Array':
 
 - adjusted.js <br>
 - adjusted2.js* <br>
@@ -19,7 +19,7 @@ At the present time, this module contains the following functionality:
 Dependencies: math.js
 
 
-* Create bivariate classes (based on tertiles) to support a 3 x 3 color scheme for a bivariate choropleth map:
+#### Create bivariate classes (based on tertiles) to support a 3 x 3 color scheme for a bivariate choropleth map:
 
 - bchTerts.js <br>
 - bchTerts2.js* <br>
@@ -27,28 +27,29 @@ Dependencies: math.js
 Dependencies: simple-statistics
 
 
-* Calculate cosine similarity between arrays:
+#### Calculate cosine similarity between arrays:
 
 - cosSim.js <br>
 
 Dependencies: math.js
 
 
-* Calculate Euclidean distance between arrays:
+#### Calculate Euclidean distance between arrays:
 
 - distEuclidean.js <br>
 
 Dependencies: none
 
 
-* Create a pairwise Euclidean distance matrix from a 'DenseMatrix' or 2D 'Array':
+#### Create a pairwise Euclidean distance matrix from a 'DenseMatrix' or 2D 'Array':
 
 - EucDistMatrix.js <br>
 
 Dependencies: math.js
 
 
-* Apply a rank transformation to an array:
+
+#### Apply a rank transformation to an array:
 
 - percentileRank.js <br>
 - percentileRank2.js <br>
