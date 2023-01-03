@@ -63,7 +63,7 @@ Other files:
 
 - testData.js contains test code and example calls for each function.<br>
 - test.js contains a JSON object with county level SVI 2018 data (as percent ranks) for five indicators plus diabetes percentage.<br>
--data/diabetes_indicators.csv is a comma delimited file containing the same data as test.js<br>
+- data/diabetes_indicators.csv is a comma delimited file containing the same data as test.js<br>
 
 ---
 
