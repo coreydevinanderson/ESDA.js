@@ -38,7 +38,7 @@ console.log(adjusted2(FIPS_mat, method = "centered")); // DenseMatrix
 // console.log(adjusted2(FIPS_mat, method = "zscore"));
 
 // Example with null in array:
-const FIPS_01001x = [0.1850, 0.5401, 0.6336, 0.4397, 0.2745, null];
+const FIPS_01001x = [0.1850, null, 0.6336, 0.4397, 0.2745, 0.7074];
 // Now create a matrix with the new array that contains null...
 let FIPS_mat_x = math.matrix([FIPS_01001x, FIPS_01003, FIPS_01005]); 
 
@@ -148,6 +148,7 @@ console.log(math.distance(FIPS_01001, FIPS_01003))
 
 //------------------------------------------------------------------------------
 
+
 //---------------//
 // EucDistMatrix //
 //---------------//
@@ -160,6 +161,18 @@ console.log(EucDistMatrix(FIPS_mat))  // default is "Array
 
 //------------------------------------------------------------------------------
 
+
+//-------------//
+// dotProduct2 //
+//-------------//
+
+const FIPS_01003x = [0.6428, 0.2239, 0.5158, null, 0.3121, 0.4925];
+
+console.log(dotProduct2(FIPS_01001x, FIPS_01003x))
+console.log(dotProduct2(FIPS_01001, FIPS_01003))
+
+
+//------------------------------------------------------------------------------
 
 //----------------//
 // percentileRank //
