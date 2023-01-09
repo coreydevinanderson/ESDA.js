@@ -55,7 +55,7 @@ let FIPS_mat_x = math.matrix([FIPS_01001x, FIPS_01003, FIPS_01005]);
 
 // Load data (from JSON on GitHub) for prototyping:
 
-let url = "https://raw.githubusercontent.com/coreydevinanderson/cossimjs/main/data/diabetes_indicators.JSON";
+let url = "https://raw.githubusercontent.com/coreydevinanderson/ESDA.js/main/test.json";
 
 let xhReq = new XMLHttpRequest();
 xhReq.open("GET", url, false);
