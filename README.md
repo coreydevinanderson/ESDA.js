@@ -8,7 +8,7 @@ This module was inspired by the fact that many spatial analyses yield large squa
 
 At the present time, this module contains the following functionality:
 
-(an asterisk * indicates versions of functions that have been rewritten to account for null values)
+An asterisk * indicates versions of functions that have been rewritten to account for null values. Two versions are being maintained (for the present time) because the functions that do not handle nulls are more concise, and may execute slighltly faster if you do not require null value handling.
 
 
 #### Mean-center or standardize a 'DenseMatrix' or 2D 'Array':
