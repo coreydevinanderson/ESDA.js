@@ -11,7 +11,8 @@
 // scores.
 
 // For arrays containing null values use adjusted2(), which is an edit of 
-// adjusted that can handle values.
+// adjusted that can handle values. If your task is limited to 1D Arrays, use
+// adjusted2x.
 
 // -----------------------------------------------------------------------------
 
@@ -39,8 +40,6 @@
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-
-// Run from START to END
 
 // START
 function adjusted(yourMatrix, method = "centered") {

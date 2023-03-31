@@ -19,12 +19,17 @@ let FIPS_mat = math.matrix([FIPS_01001, FIPS_01003, FIPS_01005]); // create a De
 // adjusted2 //
 //-----------//
 
+//------------//
+// adjusted2x //
+//------------//
+
 
 // Options:
 
-// Default: method = "zscore"
-// FIPS_zscores_rows = adjusted(FIPS_mat["_data"]); // input Array
+// Default: method = "centered"
+// FIPS_zscores_rows = adjusted(FIPS_mat["_data"]); // to fetch data slot from DenseMatrix object
 // FIPS_zscores_rows = adjusted(FIPS_mat); // input DenseMatrix
+// FIPS_zscores_rows = adjusted([FIPS_01001])  // to input 1D JS Array, you must nest it in square brackets.
 // console.log(FIPS_zscores_rows) // output is an Array
 
 console.log(adjusted(FIPS_mat, method = "centered")); // DenseMatrix
@@ -32,7 +37,6 @@ console.log(adjusted(FIPS_mat, method = "centered")); // DenseMatrix
 
 
 //------------------------------------------------------------------------------
-
 
 console.log(adjusted2(FIPS_mat, method = "centered")); // DenseMatrix
 // console.log(adjusted2(FIPS_mat, method = "zscore"));
