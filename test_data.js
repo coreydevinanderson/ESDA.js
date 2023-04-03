@@ -178,6 +178,27 @@ console.log(dotProduct2(FIPS_01001, FIPS_01003))
 
 //------------------------------------------------------------------------------
 
+//--------------//
+// minMaxScaler //
+//--------------//
+
+
+// Test data:
+const FEI = [6.5, 7.4, 5.7, 7.6, 7.8, 4.6]; 
+
+// with nulls
+const FEIx = [6.5, null, 5.7, 7.6, 7.8, 4.6];
+
+
+// Example call:
+console.log(minMaxScaler(FEI));
+console.log(minMaxScaler(FEIx));
+
+//------------------------------------------------------------------------------
+
+
+
+
 //----------------//
 // percentileRank //
 //----------------//
@@ -203,3 +224,13 @@ console.log(percentileRank2(randArrX))
 
 //------------------------------------------------------------------------------ 
 
+//------------------//
+// unitVectorScaler //
+//------------------//
+
+// Test data:
+
+// Using FEI and FEIx from minMaxScaler()
+
+// console.log(L2(FEI))
+console.log(unitVectorScaler(FEIx))
