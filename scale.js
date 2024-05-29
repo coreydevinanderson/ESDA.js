@@ -1,4 +1,4 @@
-// Function: adjusted()
+// Function: scale()
 
 // Authors: Corey Devin Anderson and Kirankumar Batchu
 
@@ -6,13 +6,9 @@
 
 // Description:
 
-// Takes an input Array or math.js DenseMatrix and returns an Array of the same 
-// number of dimensions containing the mean-centered values or standard (z) 
-// scores.
-
-// For arrays containing null values use adjusted2(), which is an edit of 
-// adjusted that can handle values. If your task is limited to 1D Arrays, use
-// adjusted2x.
+// This function is intended to be an analogue of the of 'scale' function from 
+// the R language: it can be used to either mean-center or standardize each 
+// subarray in a Matrix.
 
 // -----------------------------------------------------------------------------
 
@@ -26,23 +22,17 @@
 // An Array of equal dimensions containing either mean-centerd or standard 
 // (z) scores.
 
-// -----------------------------------------------------------------------------
 
-// Parameters:
-// yourMatrix : a math.js "DenseMatrix" or JavaScript "Array" to be rescaled.
+// Related functions:
 
-// method : rescaling to be applied to each array. Current options are "zscore" 
-//          or "centered". Default is "centered".
-
-// Returns:
-// An Array of equal dimensions containing either mean-centerd or standard (z)
-// normal scores.
+// scaleWithNulls() 
+// scale1D() 
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
 // START
-function adjusted(yourMatrix, method = "centered") {
+function scale(yourMatrix, method = "centered") {
 
   matrixType = math.typeOf(yourMatrix);
   console.log(matrixType)
@@ -64,7 +54,7 @@ function adjusted(yourMatrix, method = "centered") {
     } else if (method == "centered") {
       standardized[i] = centered
     }
-   } 
+  } 
    
 return standardized;
 }

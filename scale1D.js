@@ -1,4 +1,4 @@
-// Function: adjusted2x()
+// Function: scale1D()
 
 // Authors: Corey Devin Anderson and Kirankumar Batchu
 
@@ -12,7 +12,7 @@
 // For arrays containing null values, nulls are removed prior to calculating 
 // means (and/or standard deviations), but are retained in the output array.
 
-// The original version of this function (adjusted() and adjusted2()) work on 
+// The original version of this function (scale() and scale2()) work on 
 // 2D Arrays and Dense Matrices and may be less efficient if your task is 
 // limited to 1D Arrays.
 
@@ -31,10 +31,10 @@
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-// Function: adjusted2()
+// Function: scale1D()
 
 // START
-function adjusted2x(yourArray, method = "centered") {
+function scale1D(yourArray, method = "centered") {
 
     // .filter the data to return only those that are not null
     let arrayClean = yourArray.filter(function(x) {if (x != null) {return true} else {return false}});

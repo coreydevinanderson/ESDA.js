@@ -1,4 +1,4 @@
-// Function: adjusted2()
+// Function: scaleWithNulls()
 
 // Authors: Corey Devin Anderson and Kirankumar Batchu
 
@@ -13,7 +13,7 @@
 // For arrays containing null values, nulls are removed prior to calculating 
 // means (and/or standard deviations), but are retained in the output array.
 
-// The original version of this function (adjusted()) does not handle null 
+// The original version of this function (scale()) does not handle null 
 // values.
 
 // -----------------------------------------------------------------------------
@@ -31,10 +31,10 @@
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-// Function: adjusted2()
+// Function: scaleWithNulls()
 
 // START
-function adjusted2(yourMatrix, method = "centered") {
+function scaleWithNulls(yourMatrix, method = "centered") {
 
   matrixType = math.typeOf(yourMatrix);
   console.log("Input type: " + matrixType)

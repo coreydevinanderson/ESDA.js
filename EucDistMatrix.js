@@ -12,15 +12,20 @@
 //------------------------------------------------------------------------------//
 
 // Parameters:
+
 // yourMatrix  : an r x c "Array" or "DenseMatrix" object.
 // outputStyle : string indicating the type of object to output ("Array or DenseMatrix")
 
 // Returns: an nrow x nrow (square) distance matrix.
 
 //------------------------------------------------------------------------------//
-//------------------------------------------------------------------------------//
 
-// Run from START to END:
+// Dependencies:
+
+// math.js
+
+//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------//
 
 // START
 function EucDistMatrix(yourMatrix, outputStyle = "Array") {
