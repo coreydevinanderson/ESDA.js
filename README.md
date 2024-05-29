@@ -1,8 +1,8 @@
 ## ESDA.js
 
-JavaScript module containing a collection of different functions that are useful for exploratory spatial data analysis (ESDA) in a dashboard setting.
+JavaScript module containing a collection of different functions (and helper functions) that are useful for exploratory spatial data analysis (ESDA) in a dashboard setting.
 
-This module was inspired by the fact that many spatial analyses yield large square matrices that are costly to keep in memory or otherwise would require the use of middleware to execute (e.g., in R or Python). The idea is to write a set of useful functions in JavaScript that can be executed quickly on-the-fly.
+This module was inspired by the fact that many simple spatial analyses would otherwise require the use of middleware or would have to be precalculated and stored server side. The idea is to write a set of useful functions in JavaScript that can be executed quickly on-the-fly. One limitation of this approach is that statistical inference based on spatial randomization may be too time consuming for large data sets on devices with limited computational power. 
 
 ---
 
