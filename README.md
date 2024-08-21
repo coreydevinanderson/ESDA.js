@@ -63,26 +63,26 @@ Dependencies: math.js
 
 #### Local Moran's I
 
--LocalMoranI_helpers.js <br>
--LocalMoranI_testdata.js <br>
--LocalMoranI.js <br>
--localMoranIVariance.js <br>
+- LocalMoranI_helpers.js <br>
+- LocalMoranI_testdata.js <br>
+- LocalMoranI.js <br>
+- localMoranIVariance.js <br>
 
 Dependecies: None.
 
 #### Mahalanobis distances
 
--Mahalanobis_helpers.js <br>
--Mahalanobis_testdata.js <br>
--Mahalanobis1.js <br>
--Mahalanobis2.js <br>
+- Mahalanobis_helpers.js <br>
+- Mahalanobis_testdata.js <br>
+- Mahalanobis1.js <br>
+- Mahalanobis2.js <br>
 
 Dependencies: math.js
 <br>
 
 #### MinMax transformation of an 'Array'
 
--minMaxScaler.js <vr>
+- minMaxScaler.js <vr>
 
 Dependencies: none.
 <br>
