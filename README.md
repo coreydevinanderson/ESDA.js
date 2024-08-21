@@ -48,6 +48,44 @@ Dependencies: none
 Dependencies: math.js
 <br>
 
+#### Hotspot Analysis (GetisOrd Gi and Gi*)
+
+- GetisOrdG_helpers.js <br>
+- GetisOrdG_testdata.js <br>
+- GetisOrdGi.js <br>
+- GetisOrdGiStar.js <br>
+- GetisOrdGiStarZ.js <br>
+- GetisOrdGiZ.js <br>
+- permuteGetisOrdGiStar.js <br>
+
+Dependencies: math.js
+<br>
+
+#### Local Moran's I
+
+-LocalMoranI_helpers.js <br>
+-LocalMoranI_testdata.js <br>
+-LocalMoranI.js <br>
+-localMoranIVariance.js <br>
+
+Dependecies: None.
+
+#### Mahalanobis distances
+
+-Mahalanobis_helpers.js <br>
+-Mahalanobis_testdata.js <br>
+-Mahalanobis1.js <br>
+-Mahalanobis2.js <br>
+
+Dependencies: math.js
+<br>
+
+#### MinMax transformation of an 'Array'
+
+-minMaxScaler.js <vr>
+
+Dependencies: none.
+<br>
 
 #### Apply a rank transformation to an array:
 
