@@ -1,4 +1,5 @@
-// Calculate variance for LocalMoranI statistic.
+// Calculate expected value of Local Moran's I, variance in Local Moran's I and
+// standard (Z) score.
 
 // Requires LocalMoranI_helpers.js
 
@@ -36,7 +37,7 @@
 
 
 // START
-function localMoranVariance(dataArray, weightMatrix, conditional = true) {
+function localMoranZ(dataArray, weightMatrix, conditional = true) {
   let n = weightMatrix.length;
   let expectedValueArray = Array(n) // Make blank Arrays that will be populated in a for-loop.
   let varianceArray = Array(n)
@@ -77,6 +78,6 @@ return([localI, expectedValueArray, varianceArray, zScore]);
 }
 // END
 
-console.log(localMoranVariance(peakValleyFlat, bMat))
-// console.log(localMoranVariance(peakValleyFlat, bMat, conditional = false))
-// console.log(localMoranVariance(peakValleyFlat, bMat)[1])
+console.log(localMoranZ(peakValleyFlat, bMat))
+// console.log(localMoranZ(peakValleyFlat, bMat, conditional = false))
+// console.log(localMoranZ(peakValleyFlat, bMat)[1])
