@@ -63,10 +63,10 @@ Dependencies: math.js
 
 #### Local Moran's I
 
-- LocalMoranI_helpers.js <br>
-- LocalMoranI_testdata.js <br>
-- LocalMoranI.js <br>
-- localMoranIVariance.js <br>
+- localMoranI_helpers.js <br>
+- localMoranI_testdata.js <br>
+- localMoranI.js <br>
+- localMoranIZ.js <br>
 
 Dependecies: None.
 
