@@ -66,6 +66,7 @@ Dependencies: math.js
 - localMoranI_helpers.js <br>
 - localMoranI_testdata.js <br>
 - localMoranI.js <br>
+- localMoranI_nulls.js <br>
 - localMoranIZ.js <br>
 
 Dependecies: None.
