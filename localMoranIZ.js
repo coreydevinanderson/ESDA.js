@@ -1,16 +1,20 @@
-// Calculate expected value of Local Moran's I, variance in Local Moran's I and
-// standard (Z) score.
+// Function: localMoranIZ
 
-// Requires LocalMoranI_helpers.js
+// Author: Corey Devin Anderson
+
+//------------------------------------------------------------------------------//
+
+// Requires:
+// sumArray()
+// multiplyArrays()
+// subtractArrays()
+// (SEE: localMoranI_helpers.js)
 
 // Description:
 
-// JavaScript functions for calculating Local Moran's I (sensu Anselin 1995). The 
-// function localMoran() calculates the values of Local Moran's I at each location 
-// given a flattened data array and a spatial weights matrix. The function 
-// localMoranVariance() also returns the values of Local Moran's I at each 
+// The function localMoranIZ() returns the values of Local Moran's I at each 
 // location, but includes expected Local Moran's I, variance in Local Moran's I, 
-// and the corresponding z-scores. By default, localMoranVariance() returns 
+// and the corresponding z-scores. By default, localMoranIZ()) returns 
 // expected values and variance based on the conditional permutation assumption 
 // (following the method of in Sokal et al. 1998, as outlined in Bivand and Wong 
 // 2018), but can also return values based on the total permutation assumption.
@@ -29,12 +33,10 @@
 //                permutation assumption. Default is conditional = true.
 
 // Returns:
-// localMoran()
-// a 1D Array containing the value of Local Moran's I at each location.
-// localMoranVariance()
 // a 2D Array containing Local Moran's I [0], expected Local Moran's I [1], 
 // variance in Local Moran's I [2], and corresponding z-scores [3].
 
+//------------------------------------------------------------------------------//
 
 // START
 function localMoranZ(dataArray, weightMatrix, conditional = true) {
@@ -78,6 +80,6 @@ return([localI, expectedValueArray, varianceArray, zScore]);
 }
 // END
 
-console.log(localMoranZ(peakValleyFlat, bMat))
+// console.log(localMoranZ(peakValleyFlat, bMat))
 // console.log(localMoranZ(peakValleyFlat, bMat, conditional = false))
 // console.log(localMoranZ(peakValleyFlat, bMat)[1])
