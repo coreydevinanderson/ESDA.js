@@ -1,7 +1,7 @@
 // Mann Kendall Trend Test in JavaScript
 
-// This is a work in progress...will separate helpers soon and add tests to 
-// to the test file.
+// This is a work in progress...
+// Pending additions/changes:
 
 //------------------------------------------------------------------------------
 
@@ -46,7 +46,9 @@
 
 let randomArray = [39, 45, 79, 93, 28, 86, 38, 37, 27, 65];
 let randomArray_tied = [39, 45, 79, 93, 28, 86, 38, 37, 27, 65, 39];
+let randomArray_tied_null = [39, 45, null, 93, 28, 86, 38, 37, 27, 65, 39]
 let randomArrayX = [39, 45, 79, 93, 28]; // First five values.
+let randomArrayX_null = [39, 45, null, 93, 28]
 let randomArrayX_tied = [39, 45, 79, 92, 28, 39]; // First five values plust the first value duplicated at the end of the Array.
 
 let sortedArray = randomArrayX_tied.toSorted();
@@ -57,6 +59,8 @@ let sortedArray = randomArrayX_tied.toSorted();
 
 // START
 function calculateS(yourArray) {
+  // remove nulls
+  yourArray = yourArray.filter(element => element != null)
   let n = yourArray.length;
   // Get sign of all unique pairwise differences between j and i
   let S = 0; // initialize S at zero.
@@ -82,15 +86,17 @@ function calculateS(yourArray) {
 }
 // End
 
-// let S = calculateS(randomArrayX);
-// let S = calculateS(randomArray_tied)
-// console.log(S);
+// console.log(calculateS(randomArrayX));
+// console.log(calculateS(randomArray_tied));
+// console.log(calculateS(randomArray_tied))
+// console.log(calculateS(randomArray_tied_null))
+
 //------------------------------------------------------------------------------
 
 //START
 function varianceS(yourArray) {
+  yourArray = yourArray.filter(element => element != null)
   let n = yourArray.length;
-
   let countNumbers = {};
   for (const element of yourArray) {
     if (countNumbers[element]) {
@@ -130,6 +136,7 @@ let varS = varianceS(randomArray_tied);
 
 // START
 function zMK(yourArray) {
+  yourArray = yourArray.filter(element => element != null);
   n = yourArray.length;
   if (n <= 10) {
     console.log(
@@ -158,8 +165,10 @@ function zMK(yourArray) {
 // Need to look at paper to see how 1- vs. 2-tailed P-values are handled and if abs(S) is used for negative S (assuming so).
 
 // START
-function pSmall(yourArray) {
+function pSmall(yourArray, tails = 1) {
+  yourArray = yourArray.filter(element => element != null)
   let n = yourArray.length;
+  let p = 0;
   if (n < 4) {
     console.log(
       "Your sample size is too small to conduct the Mann-Kendall Trend Test."
@@ -195,7 +204,7 @@ function pSmall(yourArray) {
     8: {
       0: 0.548,
       2: 0.452,
-      4: 0.36,
+      4: 0.360,
       6: 0.274,
       8: 0.199,
       10: 0.138,
@@ -205,9 +214,9 @@ function pSmall(yourArray) {
       18: 0.016,
       20: 0.0071,
       22: 0.0028,
-      24: 0.0009,
-      26: 0.0002,
-      28: 0.0
+      24: 0.00087,
+      26: 0.00019,
+      28: 0.000025
     },
     9: {
       0: 0.54,
@@ -225,10 +234,10 @@ function pSmall(yourArray) {
       24: 0.0063,
       26: 0.0029,
       28: 0.0012,
-      30: 0.0004,
-      32: 0.0001,
-      34: 0.0,
-      36: 0.0
+      30: 0.00043,
+      32: 0.00012,
+      34: 0.000025,
+      36: 0.0000028
     },
     10: {
       1: 0.5,
@@ -248,46 +257,55 @@ function pSmall(yourArray) {
       29: 0.0046,
       31: 0.0023,
       33: 0.0011,
-      35: 0.0005,
-      37: 0.0002,
-      39: 0.0001,
-      41: 0.0,
-      43: 0.0,
-      45: 0.0
+      35: 0.00047,
+      37: 0.00018,
+      39: 0.000058,
+      41: 0.000015,
+      43: 0.0000028,
+      45: 0.00000028
     }
   };
 
   let S = calculateS(yourArray);
-  S = Math.abs(S);
+  let SAbs = Math.abs(S);
   let subJSON = testJSON[n.toString()];
   let subJSON_keys = Object.keys(subJSON);
-
-  if (S.toString() in subJSON_keys) {
-    p = subJSON[S.toString()];
-  } else {
-    SPlus = S + 1;
-    p = testJSON[SPlus.toString()];
+  
+  if (subJSON_keys.includes(SAbs.toString())) {
+    p = subJSON[SAbs.toString()];
+  } else if (!(subJSON_keys.includes(SAbs.toString()))) {
+    SPlus = SAbs + 1;
+    p = subJSON[SPlus.toString()];
+  }
+  if (tails == 2) {
+    p = p * 2
+    if (p > 1) {
+      p = 1
+    }
   }
   return p;
 }
 // END
 
 // console.log(pSmall(randomArrayX))
+// console.log(pSmall(randomArrayX, tails = 2))
 
 //------------------------------------------------------------------------------
 
-// Function to convert zMK to a p-value using the cumulative standard normal distribution.
+// Calculate P-value for Mann-Kendall Trend test
+// If n > 10, use z-score transformation.
+
+// Efficiency could be improved by only calling certain functions one time (e.g., calculateS). Will work on this.
 
 // START
-function MKTrendTest(yourArray, tails = 2, direction = null) {
+function MKTrendTest(yourArray, tails = 1, direction = "right") {
+  yourArray = yourArray.filter(element => element != null)
+  let S = calculateS(yourArray);
   let n = yourArray.length;
   if (n > 10) {
     let zScore = zMK(yourArray);
-    if ((tails == 2) & (direction != null)) {
-      console.log(
-        "You have entered a direction for a two-tailed test. For a two-tailed test leave direction as null."
-      );
-      return;
+    if ((zScore < 0) & (direction == "right")) {
+      console.log("Your z-score is negative and the test direction ='right'. Consider direction = 'left'.")
     }
     if ((tails == 1) & (direction == "right")) {
       pOut = 1 - ss.cumulativeStdNormalProbability(zScore);
@@ -303,16 +321,26 @@ function MKTrendTest(yourArray, tails = 2, direction = null) {
         pOut = 1;
       }
     }
+    outJSON = {"n":n, "S":S, "zMK":zScore, "p":pOut}
   } else if (n <= 10) {
-    pOut = pSmall(yourArray);
-  }
-  return pOut;
+    console.log("For sample sizes less than or equal to 10, p-values are based on Gilbert (1987)(table 17-5).")
+    pOut = pSmall(yourArray, tails = tails);
+    outJSON = {"n":n, "S":S, "p":pOut}
+  } 
+return outJSON;
 }
 // END
 
-// console.log(MKTrendTest(randomArrayX, tails = 1, direction = "left"))
-// console.log(MKTrendTest(randomArrayX, tails = 1, direction = "right"))
-// console.log(MKTrendTest(randomArrayX, tails = 2))
-// console.log(MKTrendTest(randomArray, (tails = 1), (direction = "right")));
-// console.log(calculateS(randomArray))
+// console.log(MKTrendTest(randomArrayX));
+// console.log(MKTrendTest(randomArrayX_null));
+
+// console.log(MKTrendTest(randomArray, tails = 2));
+// console.log(MKTrendTest(randomArray, tails = 1, direction = "left"));
+// console.log(MKTrendTest(randomArray, tails = 2));
+// console.log(MKTrendTest(randomArray_tied, tails = 1, direction = "left"))
+// console.log(MKTrendTest(randomArray_tied, tails = 2))
+// console.log(MKTrendTest(randomArray_tied_null));
+
+// console.log(MKTrendTest(randomArray_tied, tails = 1, direction = "left"));
+
 //------------------------------------------------------------------------------
