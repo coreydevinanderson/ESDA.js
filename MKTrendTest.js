@@ -18,9 +18,9 @@
 // zMK(yourArray)  // if n > 10
 // pSmall(yourArray) // if 4 <= n <= 10
 
-// MKTrendTest(yourArray, tails = 2, direction = null))
-// Uses calculateS() and varianceS(). If n > 10, uses zMK to conduct a z-score
-// transformation and standard normal distribution to infer P.
+// MKTrendTest(yourArray, tails = 1, direction = "right"))
+// If n > 10, uses varianceS() and zMK() to conduct a z-score transformation 
+// and standard normal distribution to infer P.
 
 // Dependencies:
 // simple-statistics: ss.cumulativeStdNormalProbability(zScore);
