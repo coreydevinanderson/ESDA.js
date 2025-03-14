@@ -106,7 +106,7 @@ Other files:
 
 ---
 
-Maintainer/Developer: Corey Devin Anderson (coreydevinanderson@gmail.com)
+Maintainer/Developer: Corey Devin Anderson (coreydevinanderson@gmail.com).
 
 
 
