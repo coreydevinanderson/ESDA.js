@@ -2,7 +2,7 @@
 
 A collection of different JavaScript functions (and helper functions) that are useful for exploratory spatial data analysis (ESDA) in a web application. This project is a work-in-progress. The long-term goal is to turn this into a functional module.
 
-This module was inspired by the fact that many simple spatial analyses would otherwise require the use of middleware or would have to be precalculated and stored server side. The idea is to write a set of useful functions in JavaScript that can be executed quickly on-the-fly. One limitation of this approach is that computationally intensive functions (such as spatial randomization/permutation) may be too time consuming for large data sets on devices with limited computational power. 
+This module was inspired by the fact that many simple spatial analyses would otherwise require the use of middleware or results have to be precalculated (using a different language) and stored on the data server. The idea is to write a set of useful functions in JavaScript that can be executed quickly, on-the-fly. One limitation of this approach is that computationally intensive functions (such as spatial randomization/permutation) may be too time consuming for large data sets on devices with limited computational power. 
 
 ---
 
